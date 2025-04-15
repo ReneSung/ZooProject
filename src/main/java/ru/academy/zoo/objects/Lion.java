@@ -16,6 +16,7 @@ public class Lion extends Animal implements IDangerous, IGroundAnimal {
   public void makeSound() {
     log.info("РРРРР");
   }
+
   // Максимальный уровень опасности по 10 бальной шкале
   @Override
   public int dangerLevel() {

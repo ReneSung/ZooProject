@@ -4,11 +4,8 @@ import ru.academy.zoo.exceptions.AddTypeAnimalException;
 import ru.academy.zoo.exceptions.EnclosureOvercrowdingException;
 import ru.academy.zoo.exceptions.MaxCapacityException;
 
-import java.util.Set;
-
-// Вальер для наземных животных
-public class GroundEnclosure extends Enclosure{
-  public GroundEnclosure(int maxCapacity_) throws MaxCapacityException {
+public class BirdEnclosure extends Enclosure{
+  public BirdEnclosure(int maxCapacity_) throws MaxCapacityException {
 
     super(maxCapacity_);
   }
@@ -16,7 +13,7 @@ public class GroundEnclosure extends Enclosure{
   @Override
   public void addAnimal(Animal animal) throws AddTypeAnimalException, EnclosureOvercrowdingException {
 
-    if (animal instanceof IGroundAnimal) {
+    if (animal instanceof IFlyable) {
       super.addAnimal(animal);
     } else {
       throw new AddTypeAnimalException(animal.getClass().getSimpleName());

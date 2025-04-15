@@ -4,19 +4,16 @@ import ru.academy.zoo.exceptions.AddTypeAnimalException;
 import ru.academy.zoo.exceptions.EnclosureOvercrowdingException;
 import ru.academy.zoo.exceptions.MaxCapacityException;
 
-import java.util.Set;
+public class WaterEnclosure extends Enclosure{
 
-// Вальер для наземных животных
-public class GroundEnclosure extends Enclosure{
-  public GroundEnclosure(int maxCapacity_) throws MaxCapacityException {
-
+  public WaterEnclosure(int maxCapacity_) throws MaxCapacityException {
     super(maxCapacity_);
   }
 
   @Override
   public void addAnimal(Animal animal) throws AddTypeAnimalException, EnclosureOvercrowdingException {
 
-    if (animal instanceof IGroundAnimal) {
+    if (animal instanceof ISwimmable) {
       super.addAnimal(animal);
     } else {
       throw new AddTypeAnimalException(animal.getClass().getSimpleName());

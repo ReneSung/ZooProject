@@ -4,21 +4,21 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import ru.academy.zoo.exceptions.AgeException;
 
-public class Rabbit extends Animal implements IGroundAnimal{
+public class Penguin extends Animal implements ISwimmable{
 
-  private static final Logger log = LogManager.getLogger(Lion.class);
+  private static final Logger log = LogManager.getLogger(Penguin.class);
 
-  public Rabbit(String name_, int age_) throws AgeException {
+  public Penguin(String name_, int age_) throws AgeException {
     super(name_, age_);
   }
 
   @Override
   public void makeSound() {
-    log.info("Пиии!");
+    log.info("КРя");
   }
 
   @Override
-  public boolean isBigAnimal() {
+  public boolean isSaltWater() {
     return false;
   }
 }
